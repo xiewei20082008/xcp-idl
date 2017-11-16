@@ -339,3 +339,10 @@ module PVS_proxy = struct
 	external configure_site : debug_info -> PVS_proxy.t -> unit = ""
 	external remove_site : debug_info -> string -> unit = ""
 end
+
+module Net_sriov = struct
+	external enable_with_complete_list : debug_info -> pci_bus_paths:string list -> bool = ""
+	external set_vf_mac : debug_info -> pci_bus_path:string -> mac_address:string -> unit = ""
+	external set_vf_vlan : debug_info -> pci_bus_path:string -> vlan:int -> unit = ""
+	external set_vf_rate : debug_info -> pci_bus_path:string -> rate:int -> unit = ""
+end
